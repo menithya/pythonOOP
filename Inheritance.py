@@ -12,7 +12,9 @@ class Person():
     
 class Department(Person):
     def __init__(self, name, age, roll_number) -> None:
-        super().__init__(name, age, roll_number)
+        self.name = name
+        self.age = age
+        self.roll_number = roll_number
         
     def get_name(self):
         super().get_name()

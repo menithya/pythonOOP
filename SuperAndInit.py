@@ -14,7 +14,7 @@ class Person():
 class Department(Person):
     def __init__(self, name, age, roll_number) -> None:
         self.name = name
-        # self.age = age
+        self.age = age
         self.roll_number = roll_number
         
     # def get_name(self):
@@ -36,14 +36,22 @@ class Person:
     def get_name(self):
         return self.name
 
-class Student(Person):
-    def __init__(self, name, age, roll_no):
-        # super().__init__(name, age) # Call the constructor of the parent class, if you do not call this method we will get attribue errr
-        # becuase name attribute not exist in child class and we are not calling super().__init__
-        self.roll_no = roll_no
+# class Student(Person):
+#     def __init__(self, name, age, roll_no):
+#         # super().__init__(name, age) # Call the constructor of the parent class, if you do not call this method we will get attribue errr
+#         # becuase name attribute not exist in child class and we are not calling super().__init__
+#         self.roll_no = roll_no
    
-    def get_roll_no(self):
-        return self.roll_no
+#     def get_roll_no(self):
+#         return self.roll_no
+
+# s = Student('John', 20, 123)
+# print(s.get_name()) # Output: John
+# print(s.get_roll_no()) # Output: 123
+
+# Case1: what will happen if child class does not going to have __ init __  method  deifined in it
+class Student(Person):
+    pass
 
 s = Student('John', 20, 123)
 print(s.get_name()) # Output: John

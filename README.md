@@ -27,4 +27,27 @@ Overriding a method means to inherit a method from the parent class, keep its na
 
 Overriding deals with changing a pre-existing method from the parent class, while extending deals with adding new methods and attributes.
 
+# Multiple Inheritance
+# Overriding the __init__ Method in multiple Ineheritance
+
+When a class inherits from multiple parent classes that have their own __init__ methods, the subclass can override the __init__ method of one or more of its parent classes to customize the initialization process for the subclass.
+
+In single level inhertance just calling super().__init__() will pass data in parent class. Where as in Multiple level inheritance this does not works, becuase super().__init__()  does not which parent class method to call. Solution can be found. Even expeclity calling __init__ method like this also creates error
+
+```
+class Tyrannosaurus(Dinosaur, Carnivore):
+  def __init__(self, size, weight, diet):
+    super().__init__(size, weight)
+    super().__init__(diet)
+````
+Python does not know if super() is referring to the Dinosaur class or the Carnivore class. Overriding the __init__ method for multiple inheritance requires a unique structure. Instead of super() use the name of the class. You must also pass self to the parent __init__ method.
+
+[Mutliple Inheritance](MultipleInheritance.py)
+
+# how does isinstance and issubclass works in multiple inheritance
+
+
+
+
+
 

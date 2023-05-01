@@ -46,6 +46,38 @@ Python does not know if super() is referring to the Dinosaur class or the Carniv
 
 # how does isinstance and issubclass works in multiple inheritance
 
+# Encpsulation
+Encapsulation is a fundamental concept in object-oriented programming that refers to the practice of hiding the internal implementation details of an object from the outside world and providing a well-defined interface for interacting with the object.
+
+Encapsulation is a concept in which related data and methods are grouped together, and in which access to data is restricted.
+
+**Note**: Python does not use the **public** and **private** keywords
+
+# Public, Protected and Private
+**Public attributes**: These are attributes that can be accessed from anywhere, both inside and outside the class. In Python, all attributes and methods that do not have a leading underscore or double underscore are considered public. Here is an example:
+
+[public-Encapsulation](Encapsulation.py)
+
+**Protected attributes**: These are attributes that are intended to be accessed only within the class or by subclasses. **In Python, attributes with a single leading underscore are considered protected**. This convention serves as a hint to other developers that the attribute should not be accessed from outside the class. However, it is still technically possible to access the attribute from outside the class. Here is an example:
+
+[Protected-Encapsulation](Encapsulation.py)
+
+**Private attributes**: These are attributes that are intended to be accessed only within the class. In Python, attributes with a double leading underscore are considered private. This naming convention causes the attribute to be "name-mangled" by the interpreter, which means that its name is modified to include the class name to prevent accidental access from outside the class. Here is an example:
+
+[Private-Encapsulation](Encapsulation.py)
+
+## Name mangling
+``` 
+class PrivateClass:
+  def __init__(self):
+    self.__private_attribute = "I am a private attribute"
+    
+obj = PrivateClass()
+print(obj._PrivateClass__private_attribute)
+```
+When the Python interpreter encounters an attribute with a double underscore, it does not make it private. Instead, it changes the name to _ClassName__AttributeName. That is why Python returns and error for print(obj.__private_attribute). __private_attribute does not exist. It has been renamed to _PrivateClass__private_attribute. This whole process is called name mangling, and it is designed to avoid name collisions in inheritance. Name mangling, however, gives the appearance of private attributes and methods
+
+
 
 
 
